@@ -1,8 +1,4 @@
-// Binary Search Tree basic implementation
-
-package main
-
-import "fmt"
+package binary_tree
 
 type Node struct {
 	Value int
@@ -61,22 +57,4 @@ func (n *Node) FindValue(v int) *Node {
 		return n.GetLeft().FindValue(v)
 	}
 
-}
-
-func main() {
-	n := Node{Value: 20}
-	n.InsertNode(&Node{Value: 5})
-	n.InsertNode(&Node{Value: 10})
-	n.InsertNode(&Node{Value: 11})
-	n.InsertNode(&Node{Value: 9})
-	n.InsertNode(&Node{Value: 7})
-	n.InsertNode(&Node{Value: 4})
-	n.InsertNode(&Node{Value: 6})
-
-	found_n := n.FindValue(4)
-
-	fmt.Println("Found Node address:")
-	fmt.Println(&found_n)
-	fmt.Println("Found Node value:")
-	fmt.Println(found_n.GetValue())
 }
