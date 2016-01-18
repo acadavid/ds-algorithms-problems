@@ -12,12 +12,23 @@ class String
 
     true
   end
+
+  def is_nice_part2?
+    if !(/(\w{2}).*\1+/ =~ self)
+      return false
+    end
+    if !(/(\w).\1/ =~ self)
+      return false
+    end
+
+    true
+  end
 end
 
 f = File.open("input.in")
 total = 0
 f.each_line do |l|
-  total += 1 if l.is_nice?
+  total += 1 if l.is_nice_part2?
 end
 
 puts total
